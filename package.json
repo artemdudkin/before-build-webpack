@@ -9,7 +9,7 @@
   },
   "keywords": ["webpack"],
   "author": "Sasha Koss <kossnocorp@gmail.com>",
-  "contributors" : ["Artem Dudkin <sheeva@list.ru>"]
+  "contributors" : ["Artem Dudkin <sheeva@list.ru>"],
   "license": "MIT"
 }
 
