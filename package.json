@@ -1,14 +1,15 @@
 {
-  "name": "on-build-webpack",
+  "name": "before-build-webpack",
   "version": "0.1.0",
-  "description": "Webpack plugin that gives ability to add callback after build",
-  "main": "on_build_webpack.js",
+  "description": "Webpack plugin that gives ability to add callback before build",
+  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kossnocorp/on-build-webpack"
+    "url": "https://github.com/artemdudkin/before-build-webpack"
   },
   "keywords": ["webpack"],
   "author": "Sasha Koss <kossnocorp@gmail.com>",
+  "contributors" : ["Artem Dudkin <sheeva@list.ru>"]
   "license": "MIT"
 }
 
