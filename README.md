@@ -1,7 +1,7 @@
 # before-build-webpack
 
-[Webpack](http://webpack.github.io/) plugin that gives ability to before callback
-after build.
+[Webpack](http://webpack.github.io/) plugin that gives ability to add callback
+before build.
 
 ## Installation
 
