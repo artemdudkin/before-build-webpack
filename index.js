@@ -4,16 +4,17 @@
 
 /**
  * @constructor
- * @param {onBuildCallback} callback - will be called right after build.
+ * @param {beforeBuildCallback} callback - will be called before build.
  */
 function WebpackBeforeBuildPlugin(callback) {
   this.callback = callback;
 };
 
 /**
- * @callback onBuildCallback
- * @param {object} stats - webpack stats object
- */
+ * @callback beforeBuildCallback
+ * @param {object} compiler - webpack compiler object
+ * @param {object} callback - callback you should call if you want to continue compilation
+  */
 
 /**
  * @param {object} compiler
