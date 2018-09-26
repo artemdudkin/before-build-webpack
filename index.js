@@ -21,7 +21,7 @@ function WebpackBeforeBuildPlugin(callback) {
  */
 WebpackBeforeBuildPlugin.prototype.apply = function(compiler) {
   compiler.plugin('run', this.callback);
-  compiler.plugin('run-watch', this.callback);  
+  compiler.plugin('watchRun', this.callback);  
 };
 
 module.exports = WebpackBeforeBuildPlugin;
