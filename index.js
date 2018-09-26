@@ -26,17 +26,15 @@ WebpackBeforeBuildPlugin.prototype.apply = function (compiler) {
 function _applyPlugin (compiler, eventName, fn) {
   if (!compiler.hooks) { 
     //webpack v1-3
-    compiler.plugin(eventName, (stats, callback) => {
-      fn(stats);
-      // some events have "callback" that should be called to continue 
-      if (typeof callback === "function") callback();
+    compiler.plugin(eventName, (compiler, callback) => {
+      fn(compiler, callback || function(){});
     });
   } else { 
     //webpack v4
     eventName = _camelCase(eventName);
     if (compiler.hooks[eventName]) {
-      compiler.hooks[eventName].tap({ name: "before-build-webpack-plugin" }, (stats) => {
-        fn(stats);
+      compiler.hooks[eventName].tapAsync({ name: "before-build-webpack-plugin" }, (tap, callback) => {
+        fn(tap, callback);
       });
     }
   }
