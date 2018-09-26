@@ -18,8 +18,9 @@ var WebpackBeforeBuildPlugin = require('before-build-webpack');
 // ...
   module: {
     plugins: [
-      new WebpackBeforeBuildPlugin(function(compiler) {
+      new WebpackBeforeBuildPlugin(function(stats, callback) {
         // Do whatever you want...
+        callback(); //don't call it if you do want to stop compilation
       }),
     ]
   },
@@ -32,7 +33,7 @@ var WebpackBeforeBuildPlugin = require('before-build-webpack');
 // ...
   module: {
     plugins: [
-      new WebpackBeforeBuildPlugin(function(compiler) {
+      new WebpackBeforeBuildPlugin(function(stats, callback) {
         // ...
       }, ['run', 'watch-run', 'done']), // starts before build and after build
     ]
