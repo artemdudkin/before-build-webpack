@@ -1,7 +1,7 @@
 {
   "name": "before-build-webpack",
-  "version": "0.1.0",
-  "description": "Webpack plugin that gives ability to add callback before build",
+  "version": "0.2.0",
+  "description": "Webpack plugin that gives ability to add callback before build (or at any other event)",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -9,7 +9,7 @@
   },
   "keywords": ["webpack"],
   "author": "Sasha Koss <kossnocorp@gmail.com>",
-  "contributors" : ["Artem Dudkin <sheeva@list.ru>"],
+  "contributors" : ["Artem Dudkin <sheeva@list.ru>", "Sam Lynch <myself@slynch.ovh>"],
   "license": "MIT"
 }
 
