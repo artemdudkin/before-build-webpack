@@ -1,7 +1,7 @@
 # before-build-webpack
 
-[Webpack](http://webpack.github.io/) plugin that gives ability to add callback
-before build (or at any other event).
+[Webpack](http://webpack.github.io/) (v1-4) plugin that gives ability to add callback
+before build (or after or any other [event hook](https://webpack.js.org/api/compiler-hooks/)).
 
 ## Installation
 
@@ -20,7 +20,9 @@ var WebpackBeforeBuildPlugin = require('before-build-webpack');
     plugins: [
       new WebpackBeforeBuildPlugin(function(stats, callback) {
         // Do whatever you want...
-        callback(); //don't call it if you do want to stop compilation
+        callback(); // don't call it if you do want to stop compilation
+                    // (some events does no have it ('done' for instance)
+                    // and calling callback() does nothing and can be ommited)
       }),
     ]
   },
@@ -35,7 +37,7 @@ var WebpackBeforeBuildPlugin = require('before-build-webpack');
     plugins: [
       new WebpackBeforeBuildPlugin(function(stats, callback) {
         // ...
-      }, ['run', 'watch-run', 'done']), // starts before build and after build
+      }, ['run', 'watch-run', 'done']), // will fire before build and after build
     ]
   },
 // ...
