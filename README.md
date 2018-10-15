@@ -21,8 +21,8 @@ var WebpackBeforeBuildPlugin = require('before-build-webpack');
       new WebpackBeforeBuildPlugin(function(stats, callback) {
         // Do whatever you want...
         callback(); // don't call it if you do want to stop compilation
-                    // (some events does no have it ('done' for instance)
-                    // and calling callback() does nothing and can be ommited)
+                    // (some events do not have it ('done' for instance)
+                    // in this case callback() does nothing and can be ommited)
       }),
     ]
   },
