@@ -1,7 +1,7 @@
 # before-build-webpack
 
 [Webpack](http://webpack.github.io/) (v1-4) plugin that gives ability to add callback
-before build (or after or any other [event hook](https://webpack.js.org/api/compiler-hooks/)).
+before build (or after or any other [event hook](https://webpack.js.org/api/compiler-hooks/)). Can stop compilation by by condition.
 
 ## Installation
 
