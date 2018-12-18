@@ -1,3 +1,6 @@
+// TODO add v4 to pre-v4 convertation
+// TODO add tests (for v1, v2, v3, v4 webpacks as a challenge)
+
 /**
 * @module BeforeBuildWebpackPlugin
 */
