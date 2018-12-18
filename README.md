@@ -41,3 +41,4 @@ var WebpackBeforeBuildPlugin = require('before-build-webpack');
   },
 // ...
 ```
+You can use [pre-v4](https://github.com/webpack/webpack.js.org/blob/v3.11.0/src/content/api/compiler.md#event-hooks) or [v4](https://webpack.js.org/api/compiler-hooks/) hook names (i.e. any of `watch-run` and `watchRun`)
