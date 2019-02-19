@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "build": "webpack",
+    "build-stop": "webpack --config webpack.config.stoped.js"
+  },
+  "devDependencies": {
+    "webpack": "^{webpack_version}"
+  },
+  "dependencies": {}
+}

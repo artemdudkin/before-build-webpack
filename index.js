@@ -1,5 +1,4 @@
-// TODO add v4 to pre-v4 convertation
-// TODO add tests (for v1, v2, v3, v4 webpacks as a challenge)
+// TODO tests for _dashToCamelCase and _camelCaseToDash
 
 /**
 * @module BeforeBuildWebpackPlugin
@@ -29,74 +28,36 @@ WebpackBeforeBuildPlugin.prototype.apply = function (compiler) {
 function _applyPlugin (compiler, eventName, fn) {
   if (!compiler.hooks) { 
     //webpack v1-3
+    eventName = _camelCaseToDash(eventName);
     compiler.plugin(eventName, (compiler, callback) => {
       fn(compiler, callback || function(){});
     });
   } else { 
     //webpack v4
-    eventName = _camelCase(eventName);
+    eventName = _dashToCamelCase(eventName);
     if (compiler.hooks[eventName]) {
       compiler.hooks[eventName].tapAsync({ name: "before-build-webpack-plugin" }, (tap, callback) => {
         fn(tap, callback);
       });
     }
   }
+}
+
 /**
 * Converts "aaa-bbb-ccc" to "aaaBbbCcc"
 */
-function _camelCase (string) {
+function _dashToCamelCase (string) {
   return string.replace(/-([a-z])/g, (all, letter) => {
     return letter.toUpperCase();
   });
 }
 
-
-  /*
-  webpack v1-3 events
-  
-  "make"
-  "compile"
-  "after-compile"
-  "run"
-  "watch-run"
-  "should-emit"
-  "emit"
-  "after-emit"
-  "invalid"
-  "done"
-  "this-compilation"
-  "compilation"
-  "normal-module-factory"
-  "context-module-factory"
-  "failed"
-  
-  webpack v4 events
-  
-  'shouldEmit',
-  'done',
-  'additionalPass',
-  'beforeRun',
-  'run',
-  'emit',
-  'afterEmit',
-  'thisCompilation',
-  'compilation',
-  'normalModuleFactory',
-  'contextModuleFactory',
-  'beforeCompile',
-  'compile',
-  'make',
-  'afterCompile',
-  'watchRun',
-  'failed',
-  'invalid',
-  'watchClose',
-  'environment',
-  'afterEnvironment',
-  'afterPlugins',
-  'afterResolvers',
-  'entryOption'
-  */
+/**
+* Converts "aaaBbbCcc" to "aaa-bbb-ccc"
+* [source https://gist.github.com/youssman/745578062609e8acac9f]
+*/
+function _camelCaseToDash( myStr ) {
+    return myStr.replace( /([a-z])([A-Z])/g, '$1-$2' ).toLowerCase();
 }
 
 module.exports = WebpackBeforeBuildPlugin;

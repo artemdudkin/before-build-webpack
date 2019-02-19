@@ -1,15 +1,31 @@
 {
   "name": "before-build-webpack",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Webpack plugin that gives ability to add callback before build (or at any other event hook). Can stop compilation by condition.",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/artemdudkin/before-build-webpack"
   },
-  "keywords": ["webpack", "conditional", "before build", "pre build"],
+  "keywords": [
+    "webpack",
+    "conditional",
+    "before build",
+    "pre build"
+  ],
   "author": "Sasha Koss <kossnocorp@gmail.com>",
-  "contributors" : ["Artem Dudkin <sheeva@list.ru>", "Sam Lynch <myself@slynch.ovh>"],
-  "license": "MIT"
+  "contributors": [
+    "Artem Dudkin <sheeva@list.ru>",
+    "Sam Lynch <myself@slynch.ovh>"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "test": "cd tests && mocha test*.* && cd .."
+  },
+  "devDependencies": {
+    "fs.extra": "^1.3.2",
+    "mocha": "^6.0.0",
+    "chai": "^4.2.0"
+  },
+  "dependencies": {}
 }
-
