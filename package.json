@@ -28,6 +28,5 @@
     "chai": "^4.2.0"
   },
   "dependencies": {
-    "rimraf": "^2.6.3"
   }
 }
