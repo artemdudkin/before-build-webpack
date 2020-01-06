@@ -1,6 +1,6 @@
 {
   "name": "before-build-webpack",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "Webpack plugin that gives ability to add callback before build (or at any other event hook). Can stop compilation by condition.",
   "main": "index.js",
   "repository": {
